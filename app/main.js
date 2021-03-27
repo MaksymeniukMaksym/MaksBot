@@ -20,9 +20,13 @@ bot.help((ctx) => ctx.reply('Send me a sticker'))
 // })
 
 bot.hears(isLink, (ctx) => {
-    // if (ctx.update.message.from.username === 'ovojs') {
-    ctx.reply('🔥');
-    // }
+    if (ctx.update.message.from.username !== 'ovojs') {
+        // return;
+    }
+
+    ctx.reply('🔥', {
+        reply_to_message_id: ctx.message.message_id
+    });
 })
 
 bot.launch()
