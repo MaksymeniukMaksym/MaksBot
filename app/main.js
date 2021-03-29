@@ -24,7 +24,7 @@ bot.help((ctx) => ctx.reply('Send me a sticker'))
 
 bot.hears(isLink, (ctx) => {
     if (ctx.update.message.from.username !== 'ovojs') {
-        return;
+    //    return;
     }
     ctx.reply(randomElement(MaksDictionary), {
         reply_to_message_id: ctx.message.message_id
